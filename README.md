@@ -7,15 +7,15 @@ sequenceDiagram
 participant User A 
 participant backend
 participant DB
-rect rgb(175, 225, 255)
+par regist
     User A->>backend: Regist
     backend->>DB: Send User Info
 end
-rect rgb(255, 225, 175)
+par new message
     User A->>backend: Send Message
     backend->>DB: Save the Message to Que
 end
-rect rgb(175, 225, 255)
+par onine
     User A->>backend: Online
     backend->>DB: Get User Queing Message
     backend->>User A: Send Message
